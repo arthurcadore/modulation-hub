@@ -1,4 +1,3 @@
-# Analog and Digital Signals Processing Repository 
 ### Telecom Eng. - Digital Signal Processing and Wired/Wireless Communication Systems
 
 #### This repository is dedicated to the study of Digital Signal Processing and Wired/Wireless Communication Systems. The main goal is to provide a set of examples and exercises to help to understand the main concepts of the how the signals are processed and transmitted in the real world.

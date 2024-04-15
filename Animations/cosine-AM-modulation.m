@@ -80,7 +80,7 @@ for i = 1:length(t)
     xlabel('Time (s)');
     ylabel('Amplitude');
     legend('Modulated Signal', 'Modulating Signal');
-    % Update the plot
+    % Update the plot'
     drawnow;
   
     % Add a small pause to the plot

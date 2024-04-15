@@ -3,7 +3,7 @@
 
 #### This repository is dedicated to the study of Digital Signal Processing and Wired/Wireless Communication Systems. The main goal is to provide a set of examples and exercises to help to understand the main concepts of the how the signals are processed and transmitted in the real world.
 
-![Main Signal Example Capture](./pictures/readme-main.jpg)
+![Main Signal Example Capture](./pictures/main.gif)
 
 ---
 ### Prerequisites:

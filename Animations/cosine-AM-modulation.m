@@ -24,7 +24,7 @@ t_final = 2;
 t = [t_initial:Ts:t_final];
 
 % Generating the modulating signal:
-modulating_signal = A_modulating *cos(2*pi*f_modulating*t);
+modulating_signal = A_modulating * cos(2*pi*f_modulating*t);
 
 % Calculating the number of zeros to be added to the modulating signal:
 num_zeros = length(t) - length(modulating_signal);
@@ -38,13 +38,12 @@ for i = 1:length(t)
     % Calculate the current interval of time
     t_current = [t_initial:Ts:t(i)]; 
 
+    % Calculate the current modulating signal
+    modulating_signal_current = modulating_signal(1:i);
+
     % Calculate the current modulated signal
     modulated_signal_current = (A_carrier * cos(2*pi*f_carrier*t_current)) .* modulating_signal(1:length(t_current));
     
-    % Calculate the offset to shift the modulating signal to the right
-    %offset_modulating = round((i-1) * length(modulating_signal) / length(t));
-    % modulating_signal_shifted = circshift(modulating_signal, offset_modulating);
-
     % Plot the current modulated signal
     subplot(3,1,3);
     plot(t_current, modulated_signal_current, 'b', 'LineWidth', 2);
@@ -57,7 +56,7 @@ for i = 1:length(t)
 
     % Plot the current modulating signal
     subplot(3,1,1);
-    plot(t, modulating_signal, 'b', 'LineWidth', 2);
+    plot(t(1:i), modulating_signal_current, 'b', 'LineWidth', 2);
     grid on;
     xlim([0 T*2]);
     ylim([-2*A_modulating 2*A_modulating]);

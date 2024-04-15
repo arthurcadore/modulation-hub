@@ -44,16 +44,6 @@ for i = 1:length(t)
     % Calculate the current modulated signal
     modulated_signal_current = (A_carrier * cos(2*pi*f_carrier*t_current)) .* modulating_signal(1:length(t_current));
     
-    % Plot the current modulated signal
-    subplot(3,1,3);
-    plot(t_current, modulated_signal_current, 'b', 'LineWidth', 2);
-    grid on;
-    xlim([0 T*2]);
-    ylim([-2*A_carrier 2*A_carrier]);
-    title('AM Modulated Signal (Time Domain)');
-    xlabel('Time (s)');
-    ylabel('Amplitude');
-
     % Plot the current modulating signal
     subplot(3,1,1);
     plot(t(1:i), modulating_signal_current, 'b', 'LineWidth', 2);
@@ -63,6 +53,7 @@ for i = 1:length(t)
     title('Modulating Signal (Time Domain)');
     xlabel('Time (s)');
     ylabel('Amplitude');
+    legend('Modulating Signal');
 
     % Plot the current carrier signal
     subplot(3,1,2);
@@ -73,7 +64,22 @@ for i = 1:length(t)
     title('Carrier Signal (Time Domain)');
     xlabel('Time (s)');
     ylabel('Amplitude');
+    legend('Carrier Signal'); 
+    
 
+    % Plot the current modulated signal
+    subplot(3,1,3);
+    plot(t_current, modulated_signal_current, 'b', 'LineWidth', 2);
+    grid on;
+    hold on; 
+    plot(t(1:i), modulating_signal_current, 'r', 'LineWidth', 1);
+    hold off;
+    xlim([0 T*2]);
+    ylim([-2*A_carrier 2*A_carrier]);
+    title('AM Modulated Signal (Time Domain)');
+    xlabel('Time (s)');
+    ylabel('Amplitude');
+    legend('Modulated Signal', 'Modulating Signal');
     % Update the plot
     drawnow;
   

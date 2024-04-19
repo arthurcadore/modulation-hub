@@ -1,5 +1,8 @@
 clc; clear all; close all
 
+% Defining the font size for the plots.
+set(0, 'DefaultAxesFontSize', 20);
+
 % Defining the signals amplitude. 
 A_modulating = 1;
 A_carrier = 1;

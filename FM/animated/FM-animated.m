@@ -1,6 +1,9 @@
 close all; clear all; clc;
 pkg load signal;
 
+% Defining the font size for the plots.
+set(0, 'DefaultAxesFontSize', 20);
+
 % Defining the amplitudes of the signals
 A_modulating = 1;
 A_carrier = 1;
